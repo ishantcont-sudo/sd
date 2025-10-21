@@ -393,3 +393,20 @@ html, body {
     .cta-section h2 { font-size: 26px; }
     .cta-button { padding: 12px 30px; }
 }
+
+/* Force dropdown items to align vertically */
+.dropdown-menu {
+  display: flex;
+  flex-direction: column !important;  /* Stack vertically */
+  align-items: flex-start;            /* Align items to the left */
+}
+
+/* Ensure each dropdown item takes full width */
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  width: 100%;
+}
