@@ -8,10 +8,10 @@ declare const gsap: any;
 // --- DATA & CONFIG ---
 
 const servicesSubLinks = [
-  { name: 'Architectural Design', href: 'architectural-design.html' },
-  { name: 'Engineering Consultancy', href: 'engineering-consultancy.html' },
-  { name: 'Project Management Consultancy', href: 'project-management.html' },
-  { name: 'Sustainability & Energy', href: 'sustainability-energy.html' },
+  { name: 'Architectural Design', href: 'architectural-design.html', icon: 'fas fa-archway', description: 'Innovative and functional spaces from concept to construction.', image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&auto=format&fit=crop&q=60' },
+  { name: 'Engineering Consultancy', href: 'engineering-consultancy.html', icon: 'fas fa-cogs', description: 'Expert technical advice and solutions for robust project outcomes.', image: 'https://images.unsplash.com/photo-1518692113669-e34fa251a37c?w=800&auto=format&fit=crop&q=60' },
+  { name: 'Project Management Consultancy', href: 'project-management.html', icon: 'fas fa-tasks', description: 'Overseeing projects from inception to completion on time and budget.', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=60' },
+  { name: 'Sustainability & Energy', href: 'sustainability-energy.html', icon: 'fas fa-leaf', description: 'Integrating green principles for environmentally responsible designs.', image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=800&auto=format&fit=crop&q=60' },
 ];
 
 const navLinks = [
@@ -173,7 +173,7 @@ const Header = () => {
 
   useEffect(() => {
     if (isServicesDropdownOpen) {
-      const firstItem = servicesDropdownContainerRef.current?.querySelector<HTMLAnchorElement>('.dropdown-menu a');
+      const firstItem = servicesDropdownContainerRef.current?.querySelector<HTMLAnchorElement>('.dropdown-link-item');
       firstItem?.focus();
     }
   }, [isServicesDropdownOpen]);
@@ -207,7 +207,7 @@ const Header = () => {
 
   const handleDropdownItemKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>) => {
     const items = Array.from(
-      servicesDropdownContainerRef.current?.querySelectorAll<HTMLAnchorElement>('.dropdown-menu a') || []
+      servicesDropdownContainerRef.current?.querySelectorAll<HTMLAnchorElement>('.dropdown-link-item') || []
     );
     const currentIndex = items.indexOf(e.currentTarget);
 
@@ -252,13 +252,25 @@ const Header = () => {
                 {link.subLinks && <i className="fas fa-chevron-down dropdown-indicator" aria-hidden="true"></i>}
               </AppLink>
               {link.subLinks && (
-                <ul id="services-dropdown-menu" className="dropdown-menu" role="menu" aria-labelledby="services-menu-toggle">
-                  {link.subLinks.map((subLink) => (
-                    <li key={subLink.name} role="presentation">
-                      <AppLink href={subLink.href} role="menuitem" onKeyDown={handleDropdownItemKeyDown}>{subLink.name}</AppLink>
-                    </li>
-                  ))}
-                </ul>
+                <div id="services-dropdown-menu" className="dropdown-menu" role="menu" aria-labelledby="services-menu-toggle">
+                  <ul className="dropdown-links" role="none">
+                      {link.subLinks.map((subLink, index) => (
+                          <li role="presentation" key={subLink.name}>
+                              <AppLink
+                                  href={subLink.href}
+                                  role="menuitem"
+                                  onKeyDown={handleDropdownItemKeyDown}
+                                  className="dropdown-link-item"
+                                  onClick={() => setIsServicesDropdownOpen(false)}
+                                  style={{ '--delay': `${index * 0.05}s` } as React.CSSProperties}
+                              >
+                                  <i className={`${subLink.icon} dropdown-link-icon`} aria-hidden="true"></i>
+                                  <span>{subLink.name}</span>
+                              </AppLink>
+                          </li>
+                      ))}
+                  </ul>
+                </div>
               )}
             </li>
           ))}
