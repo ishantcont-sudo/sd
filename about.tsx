@@ -249,7 +249,11 @@ const Header = () => {
                 aria-controls={link.name === 'Services' ? 'services-dropdown-menu' : undefined}
               >
                 {link.name}
-                {link.subLinks && <i className="fas fa-chevron-down dropdown-indicator" aria-hidden="true"></i>}
+                {link.subLinks && (
+                  <span className="dropdown-indicator-wrapper">
+                    <i className="fas fa-chevron-down dropdown-indicator" aria-hidden="true"></i>
+                  </span>
+                )}
               </AppLink>
               {link.subLinks && (
                 <div id="services-dropdown-menu" className="dropdown-menu" role="menu" aria-labelledby="services-menu-toggle">
