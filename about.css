@@ -211,7 +211,11 @@ html, body {
 .main-nav ul li.has-dropdown > a { display: flex; align-items: center; gap: 5px; position: relative; top: 4px; }
 .dropdown-indicator { font-size: 10px; transition: transform 0.3s ease; }
 .has-dropdown.open .dropdown-indicator { transform: rotate(180deg); }
-.dropdown-menu { position: absolute; top: 100%; left: -20px; background-color: rgba(255, 255, 255, 0.95); border-radius: 4px; padding: 10px 0; list-style: none; min-width: 280px; z-index: 1001; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border: 1px solid #eee; display: flex; flex-direction: column; align-items: flex-start; }
+.dropdown-menu {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
 .has-dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); transition-delay: 0s; }
 .dropdown-menu li { opacity: 1; transform: none; width: 100%; }
 .dropdown-menu li a { padding: 8px 20px; display: block; white-space: nowrap; font-size: 13px; text-transform: none; letter-spacing: 0.5px; font-weight: 400; color: var(--text-dark); }
