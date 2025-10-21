@@ -188,17 +188,23 @@ html, body {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
+.logo {
+  order: 1;
+}
 
-.logo a.logo-text {
-  text-decoration: none;
+.logo-image {
+    height: 80px;
+    width: auto;
 }
-.app-header .logo .logo-text {
-  color: var(--text-dark);
-  text-shadow: none;
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+
+.main-nav {
+  order: 2;
 }
+
+.burger-menu {
+  order: 3;
+}
+
 
 .app-header.on-dark .main-nav a {
     color: var(--text-light);
@@ -442,17 +448,4 @@ html, body {
 .cta-section .container { position: relative; z-index: 1; }
 .cta-section h2 { font-size: 36px; font-weight: 700; margin-bottom: 20px; }
 .cta-section p { font-size: 18px; max-width: 600px; margin: 0 auto 30px; line-height: 1.7; color: #ddd; }
-.cta-button { 
-  display: inline-block; 
-  padding: 15px 40px; 
-  background-color: var(--accent-color); 
-  color: var(--text-dark); 
-  text-decoration: none; 
-  text-transform: uppercase; 
-  font-size: 14px; 
-  letter-spacing: 1px; 
-  border: 1px solid var(--accent-color); 
-  transition: all 0.3s ease; 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2); 
-  font-weight: 700;   /* ✅ fixed here */
-}
+.cta-button { display: inline-block; padding: 15px 40px; background-color: var(--accent-color); color: var(--text-dark); text-decoration: none; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; border: 1px solid var(--accent-color); transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2); font-weight:
