@@ -12,15 +12,17 @@ export default defineConfig(({ mode }) => {
       plugins: [react()],
       build: {
         rollupOptions: {
+          // FIX: Replaced `path.resolve(__dirname, ...)` with relative paths to resolve "Cannot find name '__dirname'" error.
+          // Vite correctly resolves these paths relative to the project root.
           input: {
-            main: path.resolve(__dirname, 'index.html'),
-            about: path.resolve(__dirname, 'about.html'),
-            careers: path.resolve(__dirname, 'careers.html'),
-            contact: path.resolve(__dirname, 'contact.html'),
-            'architectural-design': path.resolve(__dirname, 'architectural-design.html'),
-            'engineering-consultancy': path.resolve(__dirname, 'engineering-consultancy.html'),
-            'project-management': path.resolve(__dirname, 'project-management.html'),
-            'sustainability-energy': path.resolve(__dirname, 'sustainability-energy.html'),
+            main: 'index.html',
+            about: 'about.html',
+            careers: 'careers.html',
+            contact: 'contact.html',
+            'architectural-design': 'architectural-design.html',
+            'engineering-consultancy': 'engineering-consultancy.html',
+            'project-management': 'project-management.html',
+            'sustainability-energy': 'sustainability-energy.html',
           },
         },
       },
