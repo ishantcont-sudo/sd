@@ -242,7 +242,7 @@ html, body {
 }
 
 .app-header.on-dark .dropdown-menu {
-    background-color: #222;
+    background-color: #000000;
     border: 1px solid var(--border-light);
 }
 .app-header.on-light .dropdown-menu {
