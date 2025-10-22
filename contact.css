@@ -150,6 +150,8 @@ html, body {
 .dropdown-links { padding: 0; margin: 0; list-style: none; display: flex; flex-direction: column; gap: 2px; }
 .dropdown-links li { opacity: 0; transform: translateX(-10px); animation: dropdownItemFadeIn 0.3s ease forwards; animation-delay: var(--delay); }
 @keyframes dropdownItemFadeIn { to { opacity: 1; transform: translateX(0); } }
+.dropdown-links li { opacity: 0; transform: translateX(-10px); animation: dropdownItemFadeIn 0.3s ease forwards; animation-delay: var(--delay); }
+@keyframes dropdownItemFadeIn { to { opacity: 1; transform: translateX(0); } }
 .dropdown-link-item { display: flex; align-items: center; padding: 12px 15px; border-radius: 6px; text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease; font-weight: 400; text-transform: none; font-size: 14px; letter-spacing: 0; white-space: nowrap; margin: -4px; }
 .dropdown-link-item::after { display: none; }
 .dropdown-link-icon { margin-right: 15px; font-size: 16px; width: 20px; text-align: center; color: var(--accent-color); }
