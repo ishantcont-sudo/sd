@@ -309,6 +309,20 @@
   gap: 2px;
 }
 
+.dropdown-links li {
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: dropdownItemFadeIn 0.3s ease forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes dropdownItemFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .dropdown-link-item {
   display: flex;
   align-items: center;
