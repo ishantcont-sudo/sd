@@ -150,6 +150,7 @@ const SkipToContentLink = () => (
 );
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
   
@@ -200,6 +201,14 @@ const Header = () => {
     };
   }, [isServicesDropdownOpen]);
   
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
   const handleServicesClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsServicesDropdownOpen(prev => !prev);
@@ -224,8 +233,10 @@ const Header = () => {
     }
   };
 
+  const headerClasses = `app-header ${scrolled ? 'scrolled' : ''} on-light`;
+
   return (
-    <header className={`app-header`}>
+    <header className={headerClasses}>
       <div className="logo">
         <AppLink href="/index.html">
           <img src="https://res.cloudinary.com/dj3vhocuf/image/upload/v1760896759/Blue_Bold_Office_Idea_Logo_250_x_80_px_7_uatyqd.png" alt="Taj Design Consult Logo" className="logo-image" />
