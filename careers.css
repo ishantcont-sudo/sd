@@ -290,7 +290,7 @@
     border: 1px solid var(--border-light);
 }
 .app-header.on-light .dropdown-menu {
-    background-color: #000000;
+    background-color: #fff;
     border: 1px solid #eee;
 }
 
