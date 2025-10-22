@@ -239,16 +239,16 @@ html, body {
   visibility: hidden;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  box-shadow: #000000;
 }
 
 .app-header.on-dark .dropdown-menu {
-    background-color: #222;
+    background-color: #000000;
     border: 1px solid var(--border-light);
 }
 .app-header.on-light .dropdown-menu {
     background-color: #000000;
-    border: 1px solid #eee;
+    border: 1px solid #FFFFFF;
 }
 
 .has-dropdown.open .dropdown-menu {
