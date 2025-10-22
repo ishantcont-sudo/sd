@@ -145,7 +145,7 @@ html, body {
 .dropdown-indicator { font-size: 10px; transition: transform 0.3s ease; }
 .has-dropdown.open .dropdown-indicator { transform: rotate(180deg); }
 .dropdown-menu { position: absolute; top: 100%; left: -20px; border-radius: 8px; padding: 10px; list-style: none; min-width: 300px; z-index: 1001; opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
-.app-header.on-light .dropdown-menu { background-color: #000000; border: 1px solid #eee; }
+.app-header.on-light .dropdown-menu { background-color: #fff; border: 1px solid #eee; }
 .has-dropdown.open .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown-links { padding: 0; margin: 0; list-style: none; display: flex; flex-direction: column; gap: 2px; }
 .dropdown-links li { opacity: 0; transform: translateX(-10px); animation: dropdownItemFadeIn 0.3s ease forwards; animation-delay: var(--delay); }
